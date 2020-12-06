@@ -18,7 +18,7 @@ const authInit = function(){
   const user = utils.getCookie("user");
   auth.setUser(user || null);
   return function(){
-    // nothing
+    // to clear things
   };
 };
 export default {signIn, signOut, authInit};
