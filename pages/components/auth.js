@@ -16,7 +16,7 @@ const signOut = function(){
 const authInit = function(){
   const auth = this;
   const user = utils.getCookie("user");
-  user && auth.setUser(user);
+  auth.setUser(user || null);
   return function(){
     // nothing
   };
