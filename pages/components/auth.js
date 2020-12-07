@@ -97,15 +97,19 @@ const authInit = function(){
             }else{
                 auth.setUser(null);
                 auth.setToken(null);                
+                utils.removeCookie("user");
+                utils.removeCookie("token");            
             }
         }).catch( e =>{
             auth.setUser(null);
             auth.setToken(null);
+            utils.removeCookie("user");
+            utils.removeCookie("token");            
         });
     }
     else{
         auth.setUser(null);
-        auth.setToken(null);        
+        auth.setToken(null);
     }
     return function(){
         // to clear things
