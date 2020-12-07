@@ -33,6 +33,7 @@ import PluginMUI from "../../web_modules/react-hook-module/plugin_mui.js";
 import CopyRight from "../../pages/components/CopyRight.js";
 import PageVisitorChart from "../../pages/App/DashBoard/PageVisitorChart.js";
 import Orders from "../../pages/App/DashBoard/Orders.js";
+import { useAuth } from "../../web_modules/react-hook-module/plugin_auth.js";
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -261,7 +262,8 @@ const Admin = props => {
         auth
     } = useModule(props, {
       "props" : {
-        "router" : true
+        "router" : true,
+        "auth" : true
       },
       "state" : {
         "drawerOpen" : true
@@ -292,6 +294,11 @@ const Admin = props => {
                                     notifications
                                 </${Icon}>
                             </${Badge}>
+                        </${IconButton}>
+                        <${IconButton} color="inherit" key="fo6f7z58">
+                            <${Icon} key="3dmzqc0p">
+                                exit_to_app
+                            </${Icon}>
                         </${IconButton}>
                     </${Toolbar}>
                 </${AppBar}>
@@ -335,8 +342,8 @@ const Admin = props => {
                                 </${XOrders}>
                             </router>
                             <router path="/reports" title="reports" key="e8ltrnoq">
-                                <${Paper} className=${classes.paper + " " + classes.fixedHeight}>
-                                    ${"Chart"}
+                                <${Paper} className=${ classes.paper + " " + classes.fixedHeight }>
+                                    ${ "Chart" }
                                     <${XPageVisitorChart} usemodule_alias="XPageVisitorChart_1" usemodule_parent=${ module } x_id="xid_6wg56m9y">
                                     </${XPageVisitorChart}>
                                 </${Paper}>
