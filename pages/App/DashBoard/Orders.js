@@ -25,7 +25,6 @@ export const Order = props => {
 };
 
 export const Orders = props => {
-    const classes = useStyles();
     const {
         module,
         router,
