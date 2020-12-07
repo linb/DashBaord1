@@ -139,15 +139,6 @@ export const MainListItems = props => {
                 <${ListItemText} primary="Orders">
                 </${ListItemText}>
             </${ListItem}>
-            <${ListItem} button selected=${props.selected === "/customers"} onClick=${e => props.onSelectItem && props.onSelectItem("/customers")}>
-                <${ListItemIcon}>
-                    <${Icon}>
-                        people
-                    </${Icon}>
-                </${ListItemIcon}>
-                <${ListItemText} primary="Customers">
-                </${ListItemText}>
-            </${ListItem}>
             <${ListItem} button selected=${props.selected === "/reports"} onClick=${e => props.onSelectItem && props.onSelectItem("/reports")}>
                 <${ListItemIcon}>
                     <${Icon}>
@@ -157,6 +148,15 @@ export const MainListItems = props => {
                 <${ListItemText} primary="Reports">
                 </${ListItemText}>
             </${ListItem}>
+            <${ListItem} button selected=${props.selected === "/customers"} onClick=${e => props.onSelectItem && props.onSelectItem("/customers")}>
+                <${ListItemIcon}>
+                    <${Icon}>
+                        people
+                    </${Icon}>
+                </${ListItemIcon}>
+                <${ListItemText} primary="Customers">
+                </${ListItemText}>
+            </${ListItem}>            
             <${ListItem} button selected=${props.selected === "/integrations"} onClick=${e => props.onSelectItem && props.onSelectItem("/integrations")}>
                 <${ListItemIcon}>
                     <${Icon}>
