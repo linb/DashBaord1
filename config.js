@@ -24,7 +24,7 @@ export default {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve(mock(options));
-            }, 500);
+            }, 300);
         });        
     }
 };
