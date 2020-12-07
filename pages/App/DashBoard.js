@@ -108,7 +108,8 @@ const useStyles = makeStyles(theme => ({
         flexDirection: 'column'
     },
     fixedHeight: {
-        height: 250
+        height: 240,
+        overflow: 'hidden'
     },
     seeMore: {
         marginTop: theme.spacing(3)
