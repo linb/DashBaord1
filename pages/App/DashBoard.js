@@ -295,7 +295,7 @@ const Admin = props => {
                                 </${Icon}>
                             </${Badge}>
                         </${IconButton}>
-                        <${IconButton} color="inherit" key="fo6f7z58">
+                        <${IconButton} color="inherit" key="fo6f7z58" onClick=${ ( e ) => auth.signOut( auth.user && auth.user.token ) }>
                             <${Icon} key="3dmzqc0p">
                                 exit_to_app
                             </${Icon}>
