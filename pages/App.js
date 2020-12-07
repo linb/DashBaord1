@@ -4,8 +4,10 @@ import { React, html } from "../web_modules/preact-htm/index.js";
 import { useModule } from "../web_modules/react-hook-module/index.js";
 import { useAuth } from "../web_modules/react-hook-module/plugin_auth.js";
 import { If } from "../web_modules/react-hook-module/index.js";
+import { Box } from "../../web_modules/material-ui/index.js";
 import SignInUp from "../pages/App/SignInUp.js";
 import DashBoard from "../pages/App/DashBoard.js";
+import Copyright from "../pages/App/Copyright.js";
 
 const Module = props => {
     const [defaultState, setDefaultState] = React.useState({
@@ -37,6 +39,10 @@ return html`
                 <${XDashBoard} usemodule_alias="XDashBoard_1" usemodule_parent=${ module } x_id="xid_3rbpp0xo">
                 </${XDashBoard}>
             </${If}>
+            <${Box} mt=${4}>
+                <${Copyright}>
+                </${Copyright}>
+            </${Box}>            
         </${React.Fragment}>
     `;
 };
