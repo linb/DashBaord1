@@ -61,6 +61,7 @@ const signUp = function(params){
 };
 
 const signOut = function(token){
+    const auth = this;
     fetchTool.request({
         url: 'signOut',
         method: 'get',
