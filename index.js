@@ -9,8 +9,12 @@ import CONF from "./config.js";
 import App from "./pages/App.js";
 import configure from "./pages/components/auth.js";
 
-CONF.baseUrl && setGlobalBaseURL(CONF.baseUrl);
-CONF.mockFetch && setMockFetch(mockFetch);
+if(CONF.baseUrl){
+    setGlobalBaseURL(CONF.baseUrl);
+}
+if(CONF.mockFetch){
+    setMockFetch(mockFetch);
+}
 
 ReactDOM.render( html`
     <${React.StrictMode}>
