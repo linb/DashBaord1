@@ -72,9 +72,9 @@ export const SignIn = props => {
         request,
         auth
     } = useModule(props, {
-      "props" : {
-        "auth" : true
-      }
+        "props": {
+            "auth": true
+        }
     });
 
     const classes = useStyles4Sign();
