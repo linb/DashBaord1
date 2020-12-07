@@ -32,6 +32,7 @@ import { TableRow } from "../../web_modules/material-ui/index.js";
 import PluginMUI from "../../web_modules/react-hook-module/plugin_mui.js";
 import CopyRight from "../../pages/components/CopyRight.js";
 import PageVisitorChart from "../../pages/App/DashBoard/PageVisitorChart.js";
+import Orders from "../../pages/App/DashBoard/Orders.js";
 
 const useStyles = makeStyles(theme => ({
     root: {
