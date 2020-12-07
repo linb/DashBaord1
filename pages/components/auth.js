@@ -118,4 +118,4 @@ const authInit = function(){
 const user = utils.getCookie("user");
 const token = user && user.token;
 
-export default {signIn, signUp, signOut, authInit};
+export default {signIn, signUp, user, token, signOut, authInit};
