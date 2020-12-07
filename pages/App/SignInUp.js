@@ -22,6 +22,7 @@ import { Tabs } from "../../web_modules/material-ui/index.js";
 import { AppBar } from "../../web_modules/material-ui/index.js";
 import { Tab } from "../../web_modules/material-ui/index.js";
 import { useAuth } from "../../web_modules/react-hook-module/plugin_auth.js";
+import CopyRight from "../../pages/components/CopyRight.js";
 
 const useStyles4Sign = makeStyles(theme => ({
     paper: {
@@ -51,7 +52,7 @@ const useStyles4Sign = makeStyles(theme => ({
         margin: theme.spacing(3, 0, 2)
     }
 }));
- 
+
 export const SignIn = props => {
     const {
         module,
@@ -59,9 +60,9 @@ export const SignIn = props => {
         request,
         auth
     } = useModule(props, {
-        "props": {
-            "auth": true
-        }
+      "props" : {
+        "auth" : true
+      }
     });
 
     const classes = useStyles4Sign();
@@ -103,6 +104,8 @@ export const SignIn = props => {
                     </${Grid}>
                 </${RHForm}>
             </div>
+            <${CopyRight}>
+            </${CopyRight}>
         </${Container}>
     `;
 };
