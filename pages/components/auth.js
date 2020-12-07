@@ -9,7 +9,7 @@ import {axios} from "../../web_modules/react-hook-module/plugin_request.js";
 const signIn = function(params){
     const auth = this;
     axios.request({
-        url: 'signIn.json',
+        url: 'signIn',
         method: 'get',
         params
     }).then(rsp=>{
@@ -39,7 +39,7 @@ const signIn = function(params){
 const signUp = function(params){
     const auth = this;
     axios.request({
-        url: 'signUp.json',
+        url: 'signUp',
         method: 'get',
         params
     }).then(rsp=>{
