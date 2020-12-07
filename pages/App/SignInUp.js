@@ -21,6 +21,7 @@ import { Paper } from "../../web_modules/material-ui/index.js";
 import { Tabs } from "../../web_modules/material-ui/index.js";
 import { AppBar } from "../../web_modules/material-ui/index.js";
 import { Tab } from "../../web_modules/material-ui/index.js";
+import { useAuth } from "../../web_modules/react-hook-module/plugin_auth.js";
 
 const useStyles4Sign = makeStyles(theme => ({
     paper: {
@@ -65,6 +66,17 @@ const Copyright = props => {
 };
 
 export const SignIn = props => {
+    const {
+        module,
+        router,
+        request,
+        auth
+    } = useModule(props, {
+      "props" : {
+        "auth" : true
+      }
+    });
+
     const classes = useStyles4Sign();
 
     return html`
@@ -78,11 +90,7 @@ export const SignIn = props => {
                 <${Typography} component="h1" variant="h5">
                     Sign in
                 </${Typography}>
-                <${RHForm} className=${ classes.form } noValidate onSubmit=${ ( data ) => {
-    let result;
-    result = JSON.stringify( data );
-    alert( result );
-} }>
+                <${RHForm} className=${ classes.form } noValidate onSubmit=${ ( data ) => auth.signIn( data ) }>
                     <${TextField} variant="outlined" margin="normal" required fullWidth label="Email Address" name="email" autoComplete="email" autoFocus>
                     </${TextField}>
                     <${TextField} variant="outlined" margin="normal" required fullWidth name="password" label="Password" type="password" autoComplete="current-password">
@@ -94,12 +102,12 @@ export const SignIn = props => {
                     </${Button}>
                     <${Grid} container>
                         <${Grid} item xs>
-                            <${Link} href="#" variant="body2" onClick=${ ( e ) => window.alert( "Navigate to other page" ) }>
+                            <${Link} href="javascript:;" variant="body2" onClick=${ e => window.alert("Navigate to other page") }>
                                 Forgot password?
                             </${Link}>
                         </${Grid}>
                         <${Grid} item>
-                            <${Link} href="#" variant="body2">
+                            <${Link} href="javascript:;" variant="body2">
                                 <${RouteLink} to="signup" variant="body2">
                                     ${ "Don't have an account? Sign Up" }
                                 </${RouteLink}>
@@ -113,6 +121,17 @@ export const SignIn = props => {
 };
 
 export const SignUp = props => {
+    const {
+        module,
+        router,
+        request,
+        auth
+    } = useModule(props, {
+        "props": {
+            "auth": true
+        }
+    });
+
     const classes = useStyles4Sign();
 
     return html`
@@ -126,22 +145,18 @@ export const SignUp = props => {
                 <${Typography} component="h1" variant="h5">
                     Sign up
                 </${Typography}>
-                <${RHForm} className=${classes.form} noValidate onSubmit=${ ( data ) => {
-    let result;
-    result = JSON.stringify( data );
-    alert( result );
-} }>    
+                <${RHForm} className=${classes.form} noValidate onSubmit=${data => auth.signUp(data)}>
                     <${Grid} container spacing=${2}>
                         <${Grid} item xs=${12} sm=${6}>
-                            <${TextField} autoComplete="fname" name="firstName" variant="outlined" required fullWidth label="First Name" autoFocus >
+                            <${TextField} autoComplete="fname" name="firstName" variant="outlined" required fullWidth label="First Name" autoFocus>
                             </${TextField}>
                         </${Grid}>
                         <${Grid} item xs=${12} sm=${6}>
-                            <${TextField} variant="outlined" required fullWidth label="Last Name" name="lastName" autoComplete="lname" >
+                            <${TextField} variant="outlined" required fullWidth label="Last Name" name="lastName" autoComplete="lname">
                             </${TextField}>
                         </${Grid}>
                         <${Grid} item xs=${12}>
-                            <${TextField} variant="outlined" required fullWidth label="Email Address" name="email" autoComplete="email" >
+                            <${TextField} variant="outlined" required fullWidth label="Email Address" name="email" autoComplete="email">
                             </${TextField}>
                         </${Grid}>
                         <${Grid} item xs=${12}>
@@ -158,7 +173,7 @@ export const SignUp = props => {
                     </${Button}>
                     <${Grid} container justify="flex-end">
                         <${Grid} item>
-                            <${Link} href="#" variant="body2">
+                            <${Link} href="javascript:;" variant="body2">
                                 <${RouteLink} to="signin" variant="body2">
                                     Already have an account? Sign in
                                 </${RouteLink}>
@@ -191,7 +206,7 @@ const SignInAndUp = props => {
         <${React.Fragment}>
             <main className=${classes.layout}>
                 <${Paper} className=${classes.paper} style=${{ "marginTop": "16px", "marginBottom": "16px", "paddingBottom": "16px" }}>
-                    <${Tabs} centered value=${router.location.pathname === "/signup" ? "signup" : "signin"} onChange=${ ( e , value ) => router.navigate( value ) }>
+                    <${Tabs} centered value=${router.location.pathname === "/signup" ? "signup" : "signin"} onChange=${(e, value) => router.navigate(value)}>
                         <${Tab} value="signin" label="log in">
                         </${Tab}>
                         <${Tab} value="signup" label="not a user yet">
