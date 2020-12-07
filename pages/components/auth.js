@@ -62,6 +62,11 @@ const authInit = function(){
             }
         }).then(rsp=>{
             if(rsp.ok){
+                if(rsp.token){
+                    user.token = rsp.token;
+                    utils.setCookie("user", user);
+                    utils.setCookie("token", user.token);                    
+                }
                 auth.setUser(user);
                 auth.setToken(user && user.token);
             }else{
