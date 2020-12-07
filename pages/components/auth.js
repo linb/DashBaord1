@@ -4,7 +4,6 @@ import {axios} from "../../web_modules/react-hook-module/plugin_request.js";
 
 const signIn = function(userName, password){
     const auth = this;
-    const user = {email:"fake@email.com"};
     axios.request({
         url: './mock_APIs/signIn.json',
         method: 'get',
@@ -75,8 +74,12 @@ const authInit = function(){
             }
         }).catch( e =>{
             auth.setUser(null);
-            auth.setToken(null);            
+            auth.setToken(null);
         });
+    }
+    else{
+        auth.setUser(null);
+        auth.setToken(null);        
     }
     return function(){
         // to clear things
