@@ -78,7 +78,7 @@ const signOut = function(token){
 const authInit = function(){
     const auth = this;
     const user = utils.getCookie("user");
-    if(user & user.token){
+    if(user && user.token){
         fetchTool.request({
             url: 'checkToken',
             method: 'get',
