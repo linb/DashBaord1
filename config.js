@@ -3,18 +3,32 @@ export default {
     // baseUrl : "./mock_APIs/",
     baseUrl : "",
     mockFetch : (options) =>{
+        let data;
         const mock = (options) => {
             switch(options.url){
                 case "checkToken":
-                    break;
-                case "signIn":
-                    break;
-                case "signOut":
+                    data = { token : "fake_token" };
                     break;
                 case "signUp":
+                    data = {
+                                name:"User",
+                                token:"fake_token"
+                            };
+                    break;
+                case "signIn":
+                    data = {
+                                name:"User",
+                                token:"fake_token"
+                            };
+                    break;
+                case "signOut":
+                    data = {  };
                     break;
             }
-            return response;
+            return {
+                ok: 1,
+                data: data
+            };
         };
         
         return new Promise((resolve, reject) => {
