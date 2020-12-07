@@ -7,9 +7,11 @@ import {axios} from "../../web_modules/react-hook-module/plugin_request.js";
 // nologin status: user/token is null
 // login status: user/token is not null/undefiend/empty
 
+const fetchTool = CONF.mockFetch || axios;
+
 const signIn = function(params){
     const auth = this;
-    axios.request({
+    fetchTool.request({
         url: 'signIn',
         method: 'get',
         params
@@ -39,7 +41,7 @@ const signIn = function(params){
 };
 const signUp = function(params){
     const auth = this;
-    axios.request({
+    fetchTool.request({
         url: 'signUp',
         method: 'get',
         params
@@ -59,7 +61,7 @@ const signUp = function(params){
 };
 
 const signOut = function(token){
-    axios.request({
+    fetchTool.request({
         url: 'signOut',
         method: 'get',
         params:{token}
@@ -77,7 +79,7 @@ const authInit = function(){
     const auth = this;
     const user = utils.getCookie("user");
     if(user & user.token){
-        axios.request({
+        fetchTool.request({
             url: 'checkToken',
             method: 'get',
             params:{
