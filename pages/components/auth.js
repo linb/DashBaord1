@@ -2,17 +2,53 @@
 import {utils} from "../../web_modules/react-hook-module/index.js";
 import {axios} from "../../web_modules/react-hook-module/plugin_request.js";
 
-const signIn = function(){
+const signIn = function(userName, password){
     const auth = this;
     const user = {email:"fake@email.com"};
-    setTimeout(() => {
-        auth.setUser(user);
-        utils.setCookie("user", user);
-    }, 500);
+    axios.request({
+        url: './mock_APIs/signIn.json',
+        method: 'get',
+        params:{
+            user: userName,
+            password: password
+        }
+    }).then(rsp=>{
+        if(rsp.ok){
+            auth.setUser(rsp.user);
+            auth.setToken(rsp.user.token);
+
+            utils.setCookie("user", rsp.user);
+            utils.setCookie("token", rsp.user.token);
+        }else{
+            auth.setUser(null);
+            auth.setToken(null);
+            
+            utils.removeCookie("user");
+            utils.removeCookie("token");            
+        }
+    }).catch( e =>{
+        console.log(e);
+        
+        auth.setUser(null);
+        auth.setToken(null);
+
+        utils.removeCookie("user");
+        utils.removeCookie("token");            
+    });
 };
 const signOut = function(){
-    this.setUser(null);
-    utils.removeCookie("user");
+    axios.request({
+        url: './mock_APIs/signOut.json',
+        method: 'get'
+    }).then(rsp=>{
+        auth.setUser(null);
+        auth.setToken(null);
+
+        utils.removeCookie("user");
+        utils.removeCookie("token");
+    }).catch( e =>{
+        console.log(e);
+    });
 };
 const authInit = function(){
     const auth = this;
