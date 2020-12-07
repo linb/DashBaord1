@@ -68,47 +68,45 @@ export const SignIn = props => {
     const classes = useStyles4Sign();
 
     return html`
-        <div>
-            <${Container} component="main" maxWidth="xs">
-                <div className=${ classes.paper }>
-                    <${Avatar} className=${ classes.avatar }>
-                        <${Icon}>
-                            lock
-                        </${Icon}>
-                    </${Avatar}>
-                    <${Typography} component="h1" variant="h5">
-                        Sign in
-                    </${Typography}>
-                    <${RHForm} className=${ classes.form } noValidate onSubmit=${ ( data ) => auth.signIn( data ) }>
-                        <${TextField} variant="outlined" margin="normal" required fullWidth label="Email Address" name="email" autoComplete="email" autoFocus>
-                        </${TextField}>
-                        <${TextField} variant="outlined" margin="normal" required fullWidth name="password" label="Password" type="password" autoComplete="current-password">
-                        </${TextField}>
-                        <${FormControlLabel} control=${ html`<${Checkbox} value="remember"  color="primary" />` } name="remember" label="Remember me">
-                        </${FormControlLabel}>
-                        <${Button} type="submit" fullWidth variant="contained" color="primary" className=${ classes.submit }>
-                            Sign In
-                        </${Button}>
-                        <${Grid} container>
-                            <${Grid} item xs>
-                                <${Link} href="javascript:;" variant="body2" onClick=${ e => window.alert("Navigate to other page") }>
-                                    Forgot password?
-                                </${Link}>
-                            </${Grid}>
-                            <${Grid} item>
-                                <${Link} href="javascript:;" variant="body2">
-                                    <${RouteLink} to="signup" variant="body2">
-                                        ${ "Don't have an account? Sign Up" }
-                                    </${RouteLink}>
-                                </${Link}>
-                            </${Grid}>
+        <${Container} component="main" maxWidth="xs">
+            <div className=${ classes.paper }>
+                <${Avatar} className=${ classes.avatar }>
+                    <${Icon}>
+                        lock
+                    </${Icon}>
+                </${Avatar}>
+                <${Typography} component="h1" variant="h5">
+                    Sign in
+                </${Typography}>
+                <${RHForm} className=${ classes.form } noValidate onSubmit=${ ( data ) => auth.signIn( data ) }>
+                    <${TextField} variant="outlined" margin="normal" required fullWidth label="Email Address" name="email" autoComplete="email" autoFocus>
+                    </${TextField}>
+                    <${TextField} variant="outlined" margin="normal" required fullWidth name="password" label="Password" type="password" autoComplete="current-password">
+                    </${TextField}>
+                    <${FormControlLabel} control=${ html`<${Checkbox} value="remember"  color="primary" />` } name="remember" label="Remember me">
+                    </${FormControlLabel}>
+                    <${Button} type="submit" fullWidth variant="contained" color="primary" className=${ classes.submit }>
+                        Sign In
+                    </${Button}>
+                    <${Grid} container>
+                        <${Grid} item xs>
+                            <${Link} href="javascript:;" variant="body2" onClick=${ e => window.alert("Navigate to other page") }>
+                                Forgot password?
+                            </${Link}>
                         </${Grid}>
-                    </${RHForm}>
-                </div>
-            </${Container}>
+                        <${Grid} item>
+                            <${Link} href="javascript:;" variant="body2">
+                                <${RouteLink} to="signup" variant="body2">
+                                    ${ "Don't have an account? Sign Up" }
+                                </${RouteLink}>
+                            </${Link}>
+                        </${Grid}>
+                    </${Grid}>
+                </${RHForm}>
+            </div>
             <${CopyRight}>
             </${CopyRight}>
-        </div>
+        </${Container}>
     `;
 };
 
@@ -215,6 +213,8 @@ const SignInAndUp = props => {
                         </router>
                     </${RelativeRouter}>
                 </${Paper}>
+                <${CopyRight}>
+                </${CopyRight}>                
             </main>
         </${React.Fragment}>
     `;
