@@ -3,13 +3,14 @@ import { React, html } from "./web_modules/preact-htm/index.js";
 import { ReactDOM } from "./web_modules/preact-htm/index.js";
 import { BrowserRouter, HashRouter as Router, RelativeRouter } from "./web_modules/react-hook-module/plugin_router.js";
 import { ProvideAuth } from "./web_modules/react-hook-module/plugin_auth.js";
-import { setGlobalBaseURL } from "./web_modules/react-hook-module/plugin_request.js";
+import { setGlobalBaseURL, setMockFetch } from "./web_modules/react-hook-module/plugin_request.js";
 import CONF from "./config.js";
 
 import App from "./pages/App.js";
 import configure from "./pages/components/auth.js";
 
-setGlobalBaseURL(CONF.baseUrl);
+CONF.baseUrl && setGlobalBaseURL(CONF.baseUrl);
+CONF.mockFetch && setMockFetch(mockFetch);
 
 ReactDOM.render( html`
     <${React.StrictMode}>
