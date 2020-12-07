@@ -9,7 +9,7 @@ import {axios} from "../../web_modules/react-hook-module/plugin_request.js";
 const signIn = function(userName, password){
     const auth = this;
     axios.request({
-        url: './mock_APIs/signIn.json',
+        url: 'signIn.json',
         method: 'get',
         params:{
             user: userName,
@@ -41,7 +41,7 @@ const signIn = function(userName, password){
 };
 const signOut = function(){
     axios.request({
-        url: './mock_APIs/signOut.json',
+        url: 'signOut.json',
         method: 'get'
     }).then(rsp=>{
         auth.setUser(null);
@@ -58,7 +58,7 @@ const authInit = function(){
     const user = utils.getCookie("user");
     if(user & user.token){
         axios.request({
-            url: './mock_APIs/checkToken.json',
+            url: 'checkToken.json',
             method: 'get',
             params:{
                 token: user.token
