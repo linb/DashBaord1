@@ -138,18 +138,7 @@ const recharts_demodata1 = [{
 }, {
     name: 'Page G', uv: 3490, pv: 4300, amt: 2100
 }];
-
-export const Copyright = props => {
-    return html`
-        <${Typography} variant="body2" color="textSecondary" align="center">
-            ${'Copyright © '}
-            <${Link} color="inherit" href="https://crossui.com/">
-                CrossUI.com
-            </${Link}>${' '}
-            ${new Date().getFullYear()} {'.'}
-        </${Typography}>
-    `;
-};
+ 
 
 export const MainListItems = props => {
     return html`
@@ -398,10 +387,6 @@ export const Dashboard = props => {
                     </${Paper}>
                 </${Grid}>
             </${Grid}>
-            <${Box} pt=${ 4 }>
-                <${Copyright}>
-                </${Copyright}>
-            </${Box}>
         </${React.Fragment}>
     `;
 };
