@@ -17,7 +17,8 @@ const Module = props => {
         auth
     } = useModule(props, {
     });
-
+console.log(auth);
+    
     const XDashBoard = module.enhanceCom(DashBoard);
     const XSignInUp = module.enhanceCom(SignInUp);
     
