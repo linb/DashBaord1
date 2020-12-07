@@ -2,7 +2,9 @@
 /*jshint esversion: 8 */
 import { React, html } from "../web_modules/preact-htm/index.js";
 import { useModule } from "../web_modules/react-hook-module/index.js";
+import { useRouter } from "../web_modules/react-hook-module/plugin_router.js";
 import { useAuth } from "../web_modules/react-hook-module/plugin_auth.js";
+import { useRequest } from "../web_modules/react-hook-module/plugin_request.js";
 import { If } from "../web_modules/react-hook-module/index.js";
 import SignInUp from "../pages/App/SignInUp.js";
 import DashBoard from "../pages/App/DashBoard.js";
