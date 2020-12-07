@@ -1,4 +1,5 @@
 /*jshint esversion: 8 */
+import CONF from "../../config.js";
 import {utils} from "../../web_modules/react-hook-module/index.js";
 import {axios} from "../../web_modules/react-hook-module/plugin_request.js";
 
