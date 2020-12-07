@@ -16,6 +16,7 @@ const Module = props => {
         request,
         auth
     } = useModule(props, {
+        auth: true
     });
 console.log(auth);
     
