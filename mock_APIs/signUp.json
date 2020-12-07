@@ -1,7 +1,0 @@
- ({
-     ok : 1,
-     user : {
-         name:"User",
-         token:"fake_token"
-     }
- })
