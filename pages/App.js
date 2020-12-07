@@ -20,7 +20,6 @@ const Module = props => {
             "auth": true
         }
     });
-console.log(auth);
     
     const XDashBoard = module.enhanceCom(DashBoard);
     const XSignInUp = module.enhanceCom(SignInUp);
