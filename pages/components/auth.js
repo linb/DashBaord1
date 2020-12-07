@@ -77,7 +77,7 @@ const authInit = function(){
     const user = utils.getCookie("user");
     if(user & user.token){
         axios.request({
-            url: 'checkToken.json',
+            url: 'checkToken',
             method: 'get',
             params:{
                 token: user.token
