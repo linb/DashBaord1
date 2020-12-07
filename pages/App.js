@@ -7,7 +7,6 @@ import { If } from "../web_modules/react-hook-module/index.js";
 
 import SignInUp from "../pages/App/SignInUp.js";
 import DashBoard from "../pages/App/DashBoard.js";
-import CopyRight from "../pages/App/CopyRight.js";
 
 const Module = props => {
     const [defaultState, setDefaultState] = React.useState({
@@ -39,9 +38,6 @@ return html`
                 <${XDashBoard} usemodule_alias="XDashBoard_1" usemodule_parent=${ module } x_id="xid_3rbpp0xo">
                 </${XDashBoard}>
             </${If}>
-            
-            <${CopyRight}>
-            </${CopyRight}>
         </${React.Fragment}>
     `;
 };
