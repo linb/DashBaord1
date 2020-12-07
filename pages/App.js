@@ -7,7 +7,7 @@ import { If } from "../web_modules/react-hook-module/index.js";
 import { Box } from "../../web_modules/material-ui/index.js";
 import SignInUp from "../pages/App/SignInUp.js";
 import DashBoard from "../pages/App/DashBoard.js";
-import Copyright from "../pages/App/Copyright.js";
+import CopyRight from "../pages/App/CopyRight.js";
 
 const Module = props => {
     const [defaultState, setDefaultState] = React.useState({
