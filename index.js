@@ -13,7 +13,7 @@ if(CONF.baseUrl){
     setGlobalBaseURL(CONF.baseUrl);
 }
 if(CONF.mockFetch){
-    setMockFetch(mockFetch);
+    setMockFetch(CONF.mockFetch);
 }
 
 ReactDOM.render( html`
