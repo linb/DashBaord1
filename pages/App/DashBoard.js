@@ -29,16 +29,10 @@ import { TableBody } from "../../web_modules/material-ui/index.js";
 import { TableCell } from "../../web_modules/material-ui/index.js";
 import { TableHead } from "../../web_modules/material-ui/index.js";
 import { TableRow } from "../../web_modules/material-ui/index.js";
-import { LineChart } from "../../web_modules/recharts/index.js";
-import { ResponsiveContainer } from "../../web_modules/recharts/index.js";
-import { Line } from "../../web_modules/recharts/index.js";
-import { XAxis } from "../../web_modules/recharts/index.js";
-import { YAxis } from "../../web_modules/recharts/index.js";
-import { CartesianGrid } from "../../web_modules/recharts/index.js";
-import { Tooltip } from "../../web_modules/recharts/index.js";
-import { Legend } from "../../web_modules/recharts/index.js";
+
 import PluginMUI from "../../web_modules/react-hook-module/plugin_mui.js";
 import CopyRight from "../../pages/components/CopyRight.js";
+import PageVisitorChart from "../../pages/App/DashBoard/PageVisitorChart.js";
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -218,30 +212,6 @@ export const SecondaryListItems = props => {
     `;
 };
 
-export const Chart = props => {
-    return html`
-        <${React.Fragment}>
-            <${ResponsiveContainer} key="bd8xf94g">
-                <${LineChart} width=${600} height=${300} data=${recharts_demodata1} margin=${{ "top": 5, "right": 30, "left": 20, "bottom": 5 }}>
-                    <${XAxis} dataKey="name">
-                    </${XAxis}>
-                    <${YAxis}>
-                    </${YAxis}>
-                    <${CartesianGrid} strokeDasharray="3 3">
-                    </${CartesianGrid}>
-                    <${Legend}>
-                    </${Legend}>
-                    <${Line} type="monotone" dataKey="pv" stoke="#ff00ff" activeDot=${{ "r": 6 }}>
-                    </${Line}>
-                    <${Line} type="monotone" dataKey="uv" stoke="#82ca9d" activeDot=${{ "r": 6 }}>
-                    </${Line}>
-                    <${Tooltip}>
-                    </${Tooltip}>
-                </${LineChart}>
-            </${ResponsiveContainer}>
-        </${React.Fragment}>
-    `;
-};
 
 export const Deposits = props => {
     const {
@@ -370,8 +340,8 @@ export const Dashboard = props => {
                 <${Grid} item xs=${12} md=${8} lg=${9}>
                     <${Paper} className=${classes.paper + " " + classes.fixedHeight}>
                         ${"Chart"}
-                        <${Chart}>
-                        </${Chart}>
+                        <${PageVisitorChart}>
+                        </${PageVisitorChart}>
                     </${Paper}>
                 </${Grid}>
                 <${Grid} item xs=${12} md=${4} lg=${3}>
