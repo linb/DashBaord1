@@ -108,4 +108,4 @@ const authInit = function(){
         // to clear things
     };
 };
-export default {signIn, signOut, authInit};
+export default {signIn, signUp, signOut, authInit};
