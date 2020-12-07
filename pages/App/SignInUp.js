@@ -51,20 +51,7 @@ const useStyles4Sign = makeStyles(theme => ({
         margin: theme.spacing(3, 0, 2)
     }
 }));
-
-const Copyright = props => {
-    return html`
-    <${Typography} variant="body2" color="textSecondary" align="center">
-      ${'Copyright © '}
-      <${Link} color="inherit" href="https://crossui.com/">
-        CrossUI.com
-      </${Link}>${' '}
-      ${new Date().getFullYear()}
-      ${'.'}
-    </${Typography}>
-  `;
-};
-
+ 
 export const SignIn = props => {
     const {
         module,
@@ -223,10 +210,6 @@ const SignInAndUp = props => {
                         </router>
                     </${RelativeRouter}>
                 </${Paper}>
-                <${Box} mt=${4}>
-                    <${Copyright}>
-                    </${Copyright}>
-                </${Box}>
             </main>
         </${React.Fragment}>
     `;
