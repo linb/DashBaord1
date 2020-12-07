@@ -115,7 +115,7 @@ const authInit = function(){
         // to clear things
     };
 };
-const user = utils.getCookie("user");
-const token = user && user.token;
+const user = utils.getCookie("user") || false;
+const token = user && user.token || false;
 
 export default {signIn, signUp, user, token, signOut, authInit};
