@@ -87,13 +87,13 @@ const authInit = function(){
             }
         }).then(rsp=>{
             if(rsp.ok){
-                if(rsp.token){
+                if(rsp.token && rsp.token!==user.token){
                     user.token = rsp.token;
                     utils.setCookie("user", user);
                     utils.setCookie("token", user.token);
+                    auth.setUser(user);
+                    auth.setToken(user && user.token);
                 }
-                auth.setUser(user);
-                auth.setToken(user && user.token);
             }else{
                 auth.setUser(null);
                 auth.setToken(null);                
@@ -111,4 +111,7 @@ const authInit = function(){
         // to clear things
     };
 };
+const user = utils.getCookie("user");
+const token = user && user.token;
+
 export default {signIn, signUp, signOut, authInit};
