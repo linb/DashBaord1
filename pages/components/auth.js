@@ -6,7 +6,6 @@ import {axios} from "../../web_modules/react-hook-module/plugin_request.js";
 // nologin status: user/token is null
 // login status: user/token is not null/undefiend/empty
 
-
 const signIn = function(userName, password){
     const auth = this;
     axios.request({
