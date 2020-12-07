@@ -29,7 +29,6 @@ import { TableBody } from "../../web_modules/material-ui/index.js";
 import { TableCell } from "../../web_modules/material-ui/index.js";
 import { TableHead } from "../../web_modules/material-ui/index.js";
 import { TableRow } from "../../web_modules/material-ui/index.js";
-
 import PluginMUI from "../../web_modules/react-hook-module/plugin_mui.js";
 import CopyRight from "../../pages/components/CopyRight.js";
 import PageVisitorChart from "../../pages/App/DashBoard/PageVisitorChart.js";
@@ -119,8 +118,6 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-
-
 export const MainListItems = props => {
     return html`
         <div>
@@ -198,7 +195,6 @@ export const SecondaryListItems = props => {
       </div>
     `;
 };
-
 
 export const Deposits = props => {
     const {
@@ -364,6 +360,7 @@ const Admin = props => {
       }
     });
 
+    const XPageVisitorChart = module.enhanceCom(PageVisitorChart);
     const XOrders = module.enhanceCom(Orders);
 
     return html`
@@ -429,7 +426,14 @@ const Admin = props => {
                                 <${XOrders} usemodule_alias="XOrders_1" usemodule_parent=${ module } x_id="xid_3b4pfhrz">
                                 </${XOrders}>
                             </router>
-                            <router path="*" title="others" key="e8ltrnoq">
+                            <router path="/reports" title="reports" key="e8ltrnoq">
+                                <${Paper} className=${classes.paper + " " + classes.fixedHeight}>
+                                    ${"Chart"}
+                                    <${XPageVisitorChart} usemodule_alias="XPageVisitorChart_1" usemodule_parent=${ module } x_id="xid_6wg56m9y">
+                                    </${XPageVisitorChart}>
+                                </${Paper}>
+                            </router>
+                            <router path="*" title="others" key="gx85eqqi">
                                 Content for the relative path:
                                 ${ " " }
                                 ${ router.relativePath }
