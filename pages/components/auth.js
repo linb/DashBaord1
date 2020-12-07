@@ -36,10 +36,11 @@ const signIn = function(params){
         utils.removeCookie("token");            
     });
 };
-const signOut = function(){
+const signOut = function(token){
     axios.request({
         url: 'signOut.json',
-        method: 'get'
+        method: 'get',
+        params:{token}
     }).then(rsp=>{
         auth.setUser(null);
         auth.setToken(null);
