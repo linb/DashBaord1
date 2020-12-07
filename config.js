@@ -1,6 +1,5 @@
 /*jshint esversion: 8 */
 export default {
-    // baseUrl : "./mock_APIs/",
     baseUrl : "",
     mockFetch : (options) =>{
         let data;
