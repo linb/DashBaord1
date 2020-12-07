@@ -36,6 +36,37 @@ const signIn = function(params){
         utils.removeCookie("token");            
     });
 };
+const signUp = function(params){
+    const auth = this;
+    axios.request({
+        url: 'signUp.json',
+        method: 'get',
+        params
+    }).then(rsp=>{
+        if(rsp.ok){
+            auth.setUser(rsp.user);
+            auth.setToken(rsp.user.token);
+
+            utils.setCookie("user", rsp.user);
+            utils.setCookie("token", rsp.user.token);
+        }else{
+            auth.setUser(null);
+            auth.setToken(null);
+            
+            utils.removeCookie("user");
+            utils.removeCookie("token");            
+        }
+    }).catch( e =>{
+        console.log(e);
+        
+        auth.setUser(null);
+        auth.setToken(null);
+
+        utils.removeCookie("user");
+        utils.removeCookie("token");            
+    });
+};
+
 const signOut = function(token){
     axios.request({
         url: 'signOut.json',
