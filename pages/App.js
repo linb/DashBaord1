@@ -40,8 +40,8 @@ return html`
                 </${XDashBoard}>
             </${If}>
             
-            <${Copyright}>
-            </${Copyright}>
+            <${CopyRight}>
+            </${CopyRight}>
         </${React.Fragment}>
     `;
 };
