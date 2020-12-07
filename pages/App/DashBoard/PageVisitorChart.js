@@ -21,16 +21,13 @@ export const PageVisitorChart = props => {
     } = useModule(props, {
         "props" : {
             "req_url" : "pageVisitorData"
-        },
-        setate:{
-            lines:[]
         }
     });
 
     return html`
         <${React.Fragment}>
             <${ResponsiveContainer} key="bd8xf94g">
-                <${LineChart} width=${ 600 } height=${ 300 } data=${ module.state.lines } margin=${ { "top": 5, "right": 30, "left": 20, "bottom": 5 } }>
+                <${LineChart} width=${ 600 } height=${ 300 } data=${ request && request.response && request.response.lines || [] } margin=${ { "top": 5, "right": 30, "left": 20, "bottom": 5 } }>
                     <${XAxis} dataKey="name">
                     </${XAxis}>
                     <${YAxis}>
