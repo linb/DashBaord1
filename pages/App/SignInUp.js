@@ -104,8 +104,6 @@ export const SignIn = props => {
                     </${Grid}>
                 </${RHForm}>
             </div>
-            <${CopyRight}>
-            </${CopyRight}>
         </${Container}>
     `;
 };
