@@ -2,6 +2,7 @@
 /*jshint esversion: 8 */
 import { React, html } from "../../../web_modules/preact-htm/index.js";
 import { useModule } from "../../../web_modules/react-hook-module/index.js";
+import { Box } from "../../../web_modules/material-ui/index.js";
 import { Typography } from "../../../web_modules/material-ui/index.js";
 import { Link } from "../../../web_modules/material-ui/index.js";
 import { Avatar } from "../../../web_modules/material-ui/index.js";
