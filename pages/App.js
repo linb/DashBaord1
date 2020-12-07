@@ -30,7 +30,7 @@ return html`
             <${If} condition=${ auth.user===false } key="105wvmxp">
                 Checking status ...
             </${If}>
-            <${If} condition=${ auth.user===null } key="k0r0o5yd">
+            <${If} condition=${ !auth.user && auth.user!==false } key="k0r0o5yd">
                 <${XSignInUp} usemodule_alias="XSignInUp_1" usemodule_parent=${ module } x_id="xid_dupn1izc">
                 </${XSignInUp}>
             </${If}>
