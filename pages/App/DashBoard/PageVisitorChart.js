@@ -9,6 +9,8 @@ import { YAxis } from "../../../web_modules/recharts/index.js";
 import { CartesianGrid } from "../../../web_modules/recharts/index.js";
 import { Tooltip } from "../../../web_modules/recharts/index.js";
 import { Legend } from "../../../web_modules/recharts/index.js";
+import { useModule } from "../../../web_modules/react-hook-module/index.js";
+import { useRequest } from "../../../web_modules/react-hook-module/plugin_request.js";
 
 const recharts_demodata1 = [{
     name: 'Page A', uv: 4000, pv: 2400, amt: 2400
@@ -27,10 +29,24 @@ const recharts_demodata1 = [{
 }];
 
 export const PageVisitorChart = props => {
+    const {
+        module,
+        router,
+        request,
+        auth
+    } = useModule(props, {
+        "props" : {
+            "req_url" : "pageVisitorData"
+        },
+        setate:{
+            lines:[]
+        }
+    });
+
     return html`
         <${React.Fragment}>
             <${ResponsiveContainer} key="bd8xf94g">
-                <${LineChart} width=${600} height=${300} data=${recharts_demodata1} margin=${{ "top": 5, "right": 30, "left": 20, "bottom": 5 }}>
+                <${LineChart} width=${ 600 } height=${ 300 } data=${ module.state.lines } margin=${ { "top": 5, "right": 30, "left": 20, "bottom": 5 } }>
                     <${XAxis} dataKey="name">
                     </${XAxis}>
                     <${YAxis}>
@@ -39,9 +55,9 @@ export const PageVisitorChart = props => {
                     </${CartesianGrid}>
                     <${Legend}>
                     </${Legend}>
-                    <${Line} type="monotone" dataKey="pv" stoke="#ff00ff" activeDot=${{ "r": 6 }}>
+                    <${Line} type="monotone" dataKey="pv" stoke="#ff00ff" activeDot=${ { "r": 6 } }>
                     </${Line}>
-                    <${Line} type="monotone" dataKey="uv" stoke="#82ca9d" activeDot=${{ "r": 6 }}>
+                    <${Line} type="monotone" dataKey="uv" stoke="#82ca9d" activeDot=${ { "r": 6 } }>
                     </${Line}>
                     <${Tooltip}>
                     </${Tooltip}>
@@ -50,6 +66,5 @@ export const PageVisitorChart = props => {
         </${React.Fragment}>
     `;
 };
-
 
 export default PageVisitorChart;
