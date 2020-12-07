@@ -93,11 +93,11 @@ export const Orders = props => {
                 <${XOrder} x_id="order" x_iterator=${module.state.rows} />
             </${TableBody}>
         </${Table}>
-        <div  >
+        <${Box} mt=${4}>
             <${Link} color="primary" href="#" onClick=${e => e.preventDefault()}>
               See more orders
             </${Link}>
-        </div>
+        </${Box}>
     </${React.Fragment}>    
   `;
 };
