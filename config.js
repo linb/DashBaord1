@@ -9,25 +9,16 @@ export default {
                     data = { token : "fake_token" };
                     break;
                 case "signUp":
-                    data = {
-                                name:"User",
-                                token:"fake_token"
-                            };
+                    data = { user:{ame:"User",token:"fake_token"}};
                     break;
                 case "signIn":
-                    data = {
-                                name:"User",
-                                token:"fake_token"
-                            };
+                    data = { user:{ame:"User",token:"fake_token"}};
                     break;
                 case "signOut":
                     data = {  };
                     break;
             }
-            return {
-                ok: 1,
-                data: data
-            };
+            return Object.assign({ok : 1}, data);
         };
         
         return new Promise((resolve, reject) => {
