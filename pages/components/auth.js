@@ -59,7 +59,7 @@ const signUp = function(params){
 
 const signOut = function(token){
     axios.request({
-        url: 'signOut.json',
+        url: 'signOut',
         method: 'get',
         params:{token}
     }).then(rsp=>{
