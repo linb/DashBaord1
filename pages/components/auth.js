@@ -44,26 +44,16 @@ const signUp = function(params){
         params
     }).then(rsp=>{
         if(rsp.ok){
-            auth.setUser(rsp.user);
-            auth.setToken(rsp.user.token);
+            if(rsp.user){
+                auth.setUser(rsp.user);
+                auth.setToken(rsp.user.token);
 
-            utils.setCookie("user", rsp.user);
-            utils.setCookie("token", rsp.user.token);
-        }else{
-            auth.setUser(null);
-            auth.setToken(null);
-            
-            utils.removeCookie("user");
-            utils.removeCookie("token");            
+                utils.setCookie("user", rsp.user);
+                utils.setCookie("token", rsp.user.token);
+            }
         }
     }).catch( e =>{
         console.log(e);
-        
-        auth.setUser(null);
-        auth.setToken(null);
-
-        utils.removeCookie("user");
-        utils.removeCookie("token");            
     });
 };
 
