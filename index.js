@@ -9,7 +9,7 @@ import CONF from "./config.js";
 import App from "./pages/App.js";
 import configure from "./pages/components/auth.js";
 
-if(CONF.baseURL{
+if(CONF.baseURL){
     setGlobalBaseURL(CONF.baseURL);
 }
 if(CONF.fetchMocker){
