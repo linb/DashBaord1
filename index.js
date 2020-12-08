@@ -12,8 +12,8 @@ import configure from "./pages/components/auth.js";
 if(CONF.baseUrl){
     setGlobalBaseURL(CONF.baseUrl);
 }
-if(CONF.mockFetch){
-    setMockFetch(CONF.mockFetch);
+if(CONF.fetchMocker){
+    setFetchMocker(CONF.fetchMocker);
 }
 
 ReactDOM.render( html`
