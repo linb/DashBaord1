@@ -267,7 +267,7 @@ const Admin = props => {
       },
       "state" : {
         "drawerOpen" : true
-      }
+      } 
     });
 
     console.log(router);
