@@ -259,7 +259,7 @@ const Admin = props => {
         module,
         router,
         request,
-        auth
+        auth 
     } = useModule(props, {
       "props" : {
         "enableRouter" : true,
