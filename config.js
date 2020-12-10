@@ -90,6 +90,6 @@ export default {
             setTimeout(() => {
                 resolve(mock(options));
             }, 300);
-        });        
+        });
     }
 };
